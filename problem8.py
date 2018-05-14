@@ -1,3 +1,5 @@
+from timeit import default_timer as timer
+start_time = timer()
 s = "73167176531330624919225119674426574742355349194934"\
 "96983520312774506326239578318016984801869478851843"\
 "85861560789112949495459501737958331952853208805511"\
@@ -37,9 +39,12 @@ while(i+width-1 < len(s)):
     else:
         cur = prev / int(s[i-1])
     cur = cur * int(s[i+width-1])
-    #print("{0}->{1}".format(s[i:i+width], cur))
     prev = cur
     if cur > largest:
         largest = cur
     i += 1
-print(largest)
+ans = largest
+diff_time = timer()
+# 23514624000 in 0.0195656859503 seconds
+print("{0} in {1} seconds".format(ans, diff_time))
+
