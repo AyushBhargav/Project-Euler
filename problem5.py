@@ -1,3 +1,4 @@
+import time
 start_time = time.time()
 primes = [2,3,5,7,11,13,17,19]
 factors = {str(num):0 for num in primes}
