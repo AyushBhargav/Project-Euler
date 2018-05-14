@@ -1,9 +1,12 @@
 #include<iostream>
 #include<vector>
+#include<ctime>
 
 using namespace std;
 
 int main() {
+	time_t begin;
+	time(&begin);
 	vector<int> primes;
 	int size = 2000000;
 	// Vector initialization
@@ -22,5 +25,8 @@ int main() {
 			primes[j*i] = 0;
 		}
 	}
-	cout<<sum;
+	time_t end;
+	time(&end);
+	double diff = difftime(end, begin);
+	cout<<sum<<" in "<<diff<<" seconds.";
 }
